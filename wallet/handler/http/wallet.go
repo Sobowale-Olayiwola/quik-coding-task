@@ -23,8 +23,8 @@ func NewWalletHandler(router *gin.Engine, ws domain.WalletService) {
 	api := router.Group("/api/v1")
 	api.POST("/wallets", middleware.AuthPlayer(), handler.CreateWallet)
 	api.GET("/wallets/:wallet_id/balance", middleware.AuthPlayer(), handler.GetWalletBalance)
-	api.PUT("/wallets/:wallet_id/credit", middleware.AuthPlayer(), handler.CreditWallet)
-	api.PUT("/wallets/:wallet_id/debit", middleware.AuthPlayer(), handler.DebitWallet)
+	api.POST("/wallets/:wallet_id/credit", middleware.AuthPlayer(), handler.CreditWallet)
+	api.POST("/wallets/:wallet_id/debit", middleware.AuthPlayer(), handler.DebitWallet)
 }
 
 func isValidInteger(value string) bool {
