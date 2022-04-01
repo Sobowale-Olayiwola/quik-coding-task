@@ -33,7 +33,7 @@ func main() {
 		log.Fatalf("Failure to inject data sources: %v\n", err)
 	}
 	srv := &http.Server{
-		Addr:    fmt.Sprintf(":%s", os.Getenv("APP_PORT")),
+		Addr:    fmt.Sprintf("%s:%s", os.Getenv("APP_BASE_URL"), os.Getenv("APP_PORT")),
 		Handler: router,
 	}
 
