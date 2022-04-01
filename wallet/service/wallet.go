@@ -50,8 +50,8 @@ func (w *walletService) Credit(ctx context.Context, id, amount string) error {
 	}
 	wallet.Balance = wallet.Balance.Add(creditAmount)
 	err = w.walletRepository.Credit(ctx, &wallet)
-	mutex.Unlock()
 	w.walletInMemoryDB.Delete(ctx, id)
+	mutex.Unlock()
 	return err
 }
 
@@ -71,7 +71,7 @@ func (w *walletService) Debit(ctx context.Context, id, amount string) error {
 		return domain.ErrInsufficientFunds
 	}
 	err = w.walletRepository.Debit(ctx, &wallet)
-	mutex.Unlock()
 	w.walletInMemoryDB.Delete(ctx, id)
+	mutex.Unlock()
 	return err
 }
