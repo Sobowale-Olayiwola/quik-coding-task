@@ -36,6 +36,7 @@ This endpoint is required in order to implement the authorization middleware and
 ### Login a registered player on quik
 * POST 
     * /api/v1/players/login
+
 The API documentation can be visited on postman to interact with endpoints to display the JSON response and sample error codes
 https://www.postman.com/bold-desert-829444/workspace/quik
 
@@ -52,5 +53,6 @@ This test coverage is focused on the business logic for crediting and debiting p
 ### coverage 
 * cd /wallet/service
 * go test cover
+
 This result into a coverage of 76.3% covering all the edge cases of the business logic
 
