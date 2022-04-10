@@ -52,7 +52,7 @@ This test coverage is focused on the business logic for crediting and debiting p
 * go test -v
 ### coverage 
 * cd /wallet/service
-* go test cover
+* go test -cover
 
 This result into a coverage of 76.3% covering all the edge cases of the business logic
 
